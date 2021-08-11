@@ -1,0 +1,5 @@
+main #filter{right: 0;}
+#filter ul{width: 100%;left: 5%;padding-top: 5%;box-sizing: border-box;}
+
+#section ul{width: 80%;padding-top: 28%;box-sizing: border-box;}
+#section li{flex:0 1 100%;}

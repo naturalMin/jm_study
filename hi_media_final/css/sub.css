@@ -1,0 +1,28 @@
+main #filter{width: 100%;position: relative;right: 17%;margin-top: 5%;}
+#filter ul{width: 30%;display: flex;
+    position: absolute;right: 0;}
+#filter li{flex:0 1 20%;}
+#filter li select{width: 100%;font-size: 0.8em;border:0;}
+#filter li:last-child{padding-left: 1%;box-sizing: border-box;}
+#check{width: 30px;height: 25px;background: #ffffff;
+    border-radius: 5px;color: #F16268;border:1px solid #F16268;
+    box-shadow: 1px 1px 5px gray;    
+    cursor: pointer;}
+#filter li:last-child:hover #check{background: #F16268;color:#ffffff;}
+
+main #section{width: 100%;}
+#section ul{width: 60%;display: flex;flex-wrap: wrap;justify-content: space-around;
+    margin: auto;padding-top: 5%;box-sizing: border-box;}
+#section li{flex:0 1 33%;}
+#section li img{width: 98%;height: 98%;}
+#section li:hover img{opacity: 0.8;}
+#section li h3{text-align: center;line-height: 3;}
+#section li p:last-child{text-align: center;line-height: 5;
+color:#F16268;font-size: 0.8em;}
+
+#btn_more{width: 100px;height: 30px;background: #F16268;
+    border-radius: 10px;color: #fff;border:0;
+    box-shadow: 3px 3px 5px gray;
+    position:absolute; left: 50%;transform: translateX(-50%);
+    cursor: pointer;margin-top: 2%;
+    }
