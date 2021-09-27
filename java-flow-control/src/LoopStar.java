@@ -2,7 +2,7 @@
 public class LoopStar {
 
 	public static void main(String[] args) {
-		//마름모로 별 찍기
+		//rhombus shape make
 		for(int i = 0; i < 5; i++) {
 			for(int j = 0; j < 4-i; j++) {
 				System.out.print(" ");
