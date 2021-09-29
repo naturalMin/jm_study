@@ -10,8 +10,5 @@ public class timestable {
 			}
 			System.out.println();
 		}
-		
-
 	}
-
 }
