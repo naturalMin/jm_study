@@ -3,7 +3,7 @@
 
 def insert_dict(a_list = {}, key = None, val = None):
   if type(a_list) != dict:
-    print("Invalid type. You need to enter a dictionary type. you entered",type(key))
+    print("Invalid type. You need to enter a dictionary type. you entered",type(a_list))
   elif key == None or val == None:
     print("Please enter a name and birth date.")
   elif key in a_list:
@@ -17,7 +17,7 @@ def insert_dict(a_list = {}, key = None, val = None):
 
 def select_dict(a_list = {}, key = None):
   if type(a_list) != dict:
-    print("Invalid type. You need to enter a dictionary type. you entered",type(key))
+    print("Invalid type. You need to enter a dictionary type. you entered",type(a_list))
   elif key == None:
     print("Please enter data to search for.")
   elif key not in a_list:
@@ -29,7 +29,7 @@ def select_dict(a_list = {}, key = None):
 
 def update_dict(a_list = {}, key = None, val = None):
   if type(a_list) != dict:
-    print("Invalid type. You need to enter a dictionary type. you entered",type(key))
+    print("Invalid type. You need to enter a dictionary type. you entered",type(a_list))
   elif key == None or val == None:
     print("Please enter name and birth date to update.")
   elif key not in a_list:
@@ -43,7 +43,7 @@ def update_dict(a_list = {}, key = None, val = None):
 
 def delete_dict(a_list = {}, key = None):
   if type(a_list) != dict:
-    print("Invalid type. You need to enter a dictionary type. you entered",type(key))
+    print("Invalid type. You need to enter a dictionary type. you entered",type(a_list))
   elif key == None:
     print("Please enter name to delete.")
   elif key not in a_list:
