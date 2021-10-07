@@ -12,11 +12,11 @@ def start_over():
     print("Incorrect Answer. choose y or n")  
     start_over()
 
-def get_bts():
-  
+def get_bts():  
   print("Enter the member's name in BTS")
   bts = input("").replace(" ","").split(",") 
   for member in bts:
     print(member)
   start_over()
+  
 get_bts()
