@@ -54,7 +54,7 @@ def input_num():
         convert_val = convert_val.string
 
         amount  = format(x,',d')
-        result_currency = format_currency(int(convert_val)*x, "KRW", locale="ko_KR")
+        result_currency = format_currency(float(convert_val)*x, "KRW", locale="ko_KR")
 
         print(f"{country_data['code']} {amount} is {result_currency}")
 
