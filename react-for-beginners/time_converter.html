@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>    
+</body>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type = "text/babel">
+    const root = document.getElementById("root"); 
+    function App() {
+        const [seconds, setSeconds] = React.useState();
+        const onChange = (event) => {
+            setSeconds(event.target.value);
+        }
+        return (
+            <div>
+                <h1>Time Converter</h1>
+                <form>
+                    <div>
+                        <label htmlFor = "seconds">seconds : </label>
+                        <input
+                            value = {seconds} 
+                            placeholder = "seconds" 
+                            type = "number"
+                            onChange = {onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor = "minutes">minutes : </label>
+                        <input
+                            value = {Math.round(seconds / 60)}
+                            placeholder = "minutes"
+                            type = "number" 
+                        />
+                    </div>                    
+                    <div>                        
+                        <label htmlFor = "hours">hours : </label>
+                        <input
+                            value = {Math.round(seconds / 60 / 60)} 
+                            placeholder = "hours" 
+                            type = "number" 
+                        />
+                    </div>
+                </form>
+            </div>
+        );
+    }
+    
+    ReactDOM.render(<App />, root);
+</script>
+</html>
