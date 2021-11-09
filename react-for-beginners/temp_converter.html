@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>    
+</body>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type = "text/babel">
+    const root = document.getElementById("root"); 
+    function App() {
+        const [amount, setAmount] = React.useState();
+        const [flipped, setFlipped] = React.useState(false);        
+        const onChange = (event) => {
+            setAmount(event.target.value);
+        }
+        const onFlip = () => {
+            reset()
+            setFlipped((current) => !current)
+        };        
+        const reset = () => setAmount(0)
+        return (
+            <div>
+                <h1>Temperature Converter</h1>
+                <form>                    
+                    <label htmlFor = "celsius">Celsius : </label>
+                    <input
+                        value = {flipped ? (amount - 32) * 5/9 : amount }
+                        //섭씨칸이 비활성화(true)되면 화씨기준으로 섭씨가 나와야한다. 
+                        placeholder = "Celsius" 
+                        type = "number"
+                        onChange = {onChange}
+                        disabled = {flipped}
+                        //초기값이 false(활성화)                         
+                    />
+                
+                    <label htmlFor = "fahrenheit"> Fahrenheit : </label>
+                    <input
+                        value = {flipped ? amount : (amount * 9/5) + 32 }
+                        //화씨칸이 활성화(false)되면 섭씨기준으로 화씨가 나와야한다. 
+                        placeholder = "Fahrenheit"
+                        type = "number"
+                        onChange = {onChange}
+                        disabled = {!flipped}
+                        //초기값이 true(비활성화)                       
+                    />                                      
+                </form>
+                <button onClick = {reset}>Reset</button>
+                <button onClick = {onFlip}>Flip</button>                
+            </div>
+        );
+    }
+    
+    ReactDOM.render(<App />, root);
+</script>
+</html>
