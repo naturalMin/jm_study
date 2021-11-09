@@ -19,6 +19,7 @@
         const onChange = (event) => {
             setSeconds(event.target.value);
         }
+        const reset = () => setSeconds("")
         return (
             <div>
                 <h1>Time Converter</h1>
@@ -47,8 +48,9 @@
                             placeholder = "hours" 
                             type = "number" 
                         />
-                    </div>
+                    </div>                                        
                 </form>
+                <button onClick = {reset}>Reset</button>
             </div>
         );
     }
