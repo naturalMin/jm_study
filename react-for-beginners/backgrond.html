@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background-Color</title>
+</head>
+<style>
+    * {margin: 0;padding: 0;}
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;                    
+    }
+    button {
+        font-size: 20px;
+    }
+</style>
+<body>   
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type = "text/babel">
+    const root = document.getElementById('root');    
+    function App () {
+        const colors = [
+            "#ef5777",
+            "#575fcf",
+            "#4bcffa",
+            "#34e7e4",
+            "#0be881",
+            "#f53b57",
+            "#3c40c6",
+            "#0fbcf9",
+            "#00d8d6",
+            "#05c46b",
+            "#ffc048",
+            "#ffdd59",
+            "#ff5e57",
+            "#d2dae2",
+            "#485460",
+            "#ffa801",
+            "#ffd32a",
+            "#ff3f34"
+            ];
+        const [firstColor, setFirstColor] = React.useState();
+        const [secondColor, setSecondColor] = React.useState();    
+        const onColors = () => {
+            setFirstColor(colors[Math.floor(Math.random() * colors.length)]);
+            setSecondColor(colors[Math.floor(Math.random() * colors.length)]);            
+        }
+        const style = {
+            background : `linear-gradient(45deg ,${firstColor}, ${secondColor})`
+        }                                                 
+        return(
+        <body style = {style}>
+            <button onClick = {onColors}>Give me a Color</button>
+        </body>
+        )
+    }
+    ReactDOM.render(<App />, root);
+</script>
+</html>
