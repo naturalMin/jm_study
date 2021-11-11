@@ -53,13 +53,13 @@
         const [firstColor, setFirstColor] = React.useState(colors[0]);
         const [secondColor, setSecondColor] = React.useState(randomColor);    
         const onColors = () => {
-            setFirstColor(randomColor);                                    
+            setFirstColor(randomColor);                                                            
         }
         
         return(
             <div>
                 <Circle color = {firstColor} size = {300} onColors = {onColors}/>
-                <Circle color = {secondColor} onColors = {onColors} />
+                <Circle color = {secondColor} />
             </div>            
         );
     }
